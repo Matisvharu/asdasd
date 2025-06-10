@@ -1,0 +1,168 @@
+/* General layout */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: #0a0f24;
+  color: white;
+  height: 100vh; /* Asegura que el body ocupe toda la pantalla */
+  overflow-x: hidden; /* Evita el desplazamiento horizontal */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Asegura que el contenido se alinee al inicio */
+}
+
+.main {
+  padding-top: 100px; /* Añade espacio superior para que el contenido no quede pegado */
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px; /* Controla el ancho máximo del contenido */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Redes sociales */
+.social-icons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 20px;
+  z-index: 100;
+  flex-direction: column;
+}
+
+.social-link {
+  display: inline-block;
+  width: 60px;  /* Tamaño mayor para una mejor visibilidad */
+  height: 60px; /* Tamaño mayor para una mejor visibilidad */
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro y sutil */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4); /* Agrega sombra sutil */
+}
+
+.social-link:hover {
+  transform: scale(1.2);
+  background-color: #00c6ff; /* Fondo más brillante al pasar el mouse */
+}
+
+.social-link i {
+  font-size: 30px;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.social-link:hover i {
+  color: black; /* Cambia el color del ícono al hacer hover */
+}
+
+/* Mejor diseño para los íconos específicos de WhatsApp e Instagram */
+.social-link.whatsapp {
+  background-color: #25D366; /* Color específico para WhatsApp */
+}
+
+.social-link.instagram {
+  background-color: #E1306C; /* Color específico para Instagram */
+}
+
+/* Ajuste de tamaño del logo */
+.nav-header {
+  position: fixed;
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  transition: background 0.4s;
+}
+
+.nav-container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #00c6ff;
+}
+
+/* Animación de entrada */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Asegúrate de que el contenedor de partículas tenga el tamaño correcto */
+#particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Las partículas van al fondo */
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 10px;  /* Aumenta el tamaño de las partículas */
+  height: 10px; /* Aumenta el tamaño de las partículas */
+  background-color: #00c6ff;  /* Color de las partículas */
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: move 15s linear infinite;
+}
+
+/* Animación para las partículas */
+@keyframes move {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-100vh) scale(0.5); /* Las partículas caen y se encogen */
+    opacity: 0;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: translateY(0) scale(1);
+    opacity: 0.6;
+  }
+  to {
+    transform: translateY(-100vh) scale(0.5);
+    opacity: 0;
+  }
+}

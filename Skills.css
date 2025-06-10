@@ -1,0 +1,95 @@
+.skills {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr 1fr; /* Añadida una columna para frontend avanzado */
+  text-align: center;
+  padding: 6rem 2rem;
+  background: linear-gradient(180deg, #0a0f24, #1c1f48);
+  color: #fff;
+  gap: 2rem;
+}
+
+.skills h2 {
+  font-size: 2.8rem;
+  margin-bottom: 3rem;
+  font-weight: bold;
+  animation: fadeSlideDown 1s ease forwards;
+  color: #00c6ff;
+  grid-column: span 4; /* El título abarca las cuatro columnas */
+}
+
+.skill-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.skill-column h3 {
+  font-size: 1.6rem; /* un poco más pequeño */
+  color: #00c6ff;
+  margin-bottom: 1.2rem;
+}
+
+.skill {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem; /* menos padding para hacerlo más compacto */
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 12px rgba(0, 198, 255, 0.3);
+  position: relative;
+  cursor: pointer;
+  flex: 1;
+  border: 2px solid rgba(0, 198, 255, 0.3); /* Bordes solo en las tarjetas */
+}
+
+.skill:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 12px 20px rgba(0, 198, 255, 0.4);
+}
+
+.skill i {
+  font-size: 3rem; /* íconos más pequeños */
+  margin-bottom: 0.8rem;
+  transition: color 0.3s ease;
+}
+
+.skill span {
+  display: block;
+  font-size: 1rem; /* texto más pequeño */
+  font-weight: 600;
+}
+
+.skill:hover i {
+  color: #fff;
+}
+
+@keyframes fadeSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes iconRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.skill:hover i {
+  animation: iconRotate 1s ease-in-out forwards;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

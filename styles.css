@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(120deg, #0a0f24, #1c1f48);
+    color: #fff;
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+}
+
+section {
+    padding: 6rem 2rem;
+}

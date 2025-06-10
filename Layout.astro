@@ -1,0 +1,55 @@
+---
+import Hero3D from '../components/Hero3D.astro';
+import Skills from '../components/Skills.astro';
+import Projects from '../components/Projects.astro';
+import "../styles/Layout.css"
+const { children } = Astro.props;
+---
+
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Portafolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+  </head>
+  <div id="particles"></div>
+    <main>
+      <Hero3D />
+      <Skills />
+      <Projects />
+      {children}
+    </main>
+
+    <div class="social-icons">
+      <a href="https://github.com/Matisvharu" class="social-link" target="_blank">
+        <i class="fab fa-github"></i> <!-- Icono de GitHub -->
+      </a>
+      <a href="https://wa.me/+56968011396" class="social-link" target="_blank">
+        <i class="fab fa-whatsapp"></i> <!-- Icono de WhatsApp -->
+      </a>
+      <a href=""></a>
+    </div>
+
+<script>
+const particlesContainer = document.getElementById('particles');
+
+// Asegúrate de que el contenedor de partículas exista antes de continuar
+if (particlesContainer) {
+  for (let i = 0; i < 80; i++) {
+    const particle = document.createElement('div');
+    particle.classList.add('particle');
+    particle.style.left = `${Math.random() * 100}%`;
+    particle.style.top = `${Math.random() * 100}%`;
+    particle.style.animationDuration = `${5 + Math.random() * 5}s`;
+    particle.style.opacity = String(Math.random()); // Convertir el valor de opacity a cadena
+    particle.style.transform = `scale(${Math.random()})`;
+    
+    particlesContainer.appendChild(particle);
+  }
+} else {
+  console.warn('El contenedor de partículas no fue encontrado.');
+}
+ </script>
+    
